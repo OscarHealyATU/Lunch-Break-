@@ -5,11 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flip each time table</title>
+
     <style>
+        body{
+            background-color: black;
+
+        }
+        table {
+            margin: auto;
+            margin-top: 80px;
+        }
         table,
         th,
         td {
-            border: solid 1px black;
+            border: solid 2px radial-gradient(red,green, blue);
             min-width: 50px;
             min-height: 50px;
         }
@@ -18,7 +27,7 @@
             background-color: transparent;
             min-width: 200px;
             height: 50px;
-            border: 1px solid #f1f1f1;
+            border: 2px solid floralwhite;           
             perspective: 1000px;
         }
 
@@ -91,11 +100,47 @@
             background-color: #f6e6d7;
         }
         
+
+        .block {
+    position: relative;
+    background: #342c22;
+    padding: 10px;
+  }
+  
+  .block:before, .block:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 40s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .block:after {
+    filter: blur(50px);
+  }
     </style>
 </head>
 
 <body>
-    <table>
+    <table class="block">
         <tbody>
             <tr>
                 <th class="flip-card" colspan="6">
@@ -111,25 +156,25 @@
             <tr></tr>
             <script>
                 var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-                var subjects= [                                                                                                                                            //Subjects for:
-                    ["groupProject", "Break", "Break", "AppliedNetworking", "ProjectManagement", "ObjectOrientedComputing", "ObjectOrientedComputing", "off", "off"],  //monday
-                    ["off", "off", "groupProject", "Break", "AppliedNetworking", "ObjectOrientedComputing", "groupProject", "groupProject", "off"],                        //tuesday
-                    ["AppliedDigitalMedia", "ObjectOrientedComputing", "Break", "AppliedDigitalMedia", "AppliedDigitalMedia", "Break", "groupProject", "off", "off"],//wednesday
-                    ["ProjectManagement", "Break", "Break", "ProjectManagement", "DatabaseManagement", "AppliedNetworking", "AppliedNetworking", "off", "off"],          //thursday
+                var subjects= [                                                                                                                                 //Subjects for:
+                    ["groupProject", "Break", "Break", "AppliedNetworking", "ProjectManagement", "ObjectOrientedComputing", "ObjectOrientedComputing", "off", "off"],   //monday
+                    ["off", "off", "groupProject", "Break", "AppliedNetworking", "ObjectOrientedComputing", "groupProject", "groupProject", "off"],                     //tuesday
+                    ["AppliedDigitalMedia", "ObjectOrientedComputing", "Break", "AppliedDigitalMedia", "AppliedDigitalMedia", "Break", "groupProject", "off", "off"],   //wednesday
+                    ["ProjectManagement", "Break", "Break", "ProjectManagement", "DatabaseManagement", "AppliedNetworking", "AppliedNetworking", "off", "off"],         //thursday
                     ["off", "off", "DatabaseManagement", "DatabaseManagement", "DatabaseManagement", "off", "off", "off", "off"]                                                       //friday
                 ];
-                var week = [                                                                                                                                            //Subjects for:
+                var week = [                                                                                                                                     //Subjects for:
                     ["group Project", "Break", "Break", "Applied Networking", "Project Management", "Object Oriented Computing", "Object Oriented Computing", "", ""],  //monday
                     ["", "", "group Project", "Break", "Applied Networking", "Object Oriented Computing", "group Project", "group Project", ""],                        //tuesday
                     ["Applied Digital Media", "Object Oriented Computing", "Break", "Applied Digital Media", "Applied Digital Media", "Break", "group Project", "", ""],//wednesday
                     ["Project Management", "Break", "Break", "Project Management", "Database Management", "Applied Networking", "Applied Networking", "", ""],          //thursday
                     ["", "", "Database Management", "Database Management", "Database Management", "", "", "", ""]                                                       //friday
                 ];
-                var rooms = [                                       //rooms for:
-                    [470, "No Class", "No Class", 939, 940, 304, 304, "No Class", "No Class"],      //monday
-                    ["No Class", "No Class", 158, "No Class", 995, 470, 910, 910, "No Class"],      //tuesday
-                    [1032, "PF03", "No Class", 484, 484, "No Class", 910, "No Class", "No Class"],  //wednesday
-                    [996, "No Class", "No Class", 480, 941, 480, 480, "No Class", "No Class"],      //thursday
+                var rooms = [                                                                                   //rooms for:
+                    [470, "No Class", "No Class", 939, 940, 304, 304, "No Class", "No Class"],                      //monday
+                    ["No Class", "No Class", 158, "No Class", 995, 470, 910, 910, "No Class"],                      //tuesday
+                    [1032, "PF03", "No Class", 484, 484, "No Class", 910, "No Class", "No Class"],                  //wednesday
+                    [996, "No Class", "No Class", 480, 941, 480, 480, "No Class", "No Class"],                      //thursday
                     ["No Class", "No Class", 939, 910, 910, "No Class", "No Class", "No Class", "No Class"]         //friday
                 ];
 
@@ -156,7 +201,7 @@
             </script>
         </tbody>
     </table>
-
+    </div>
 </body>
 
 </html>
