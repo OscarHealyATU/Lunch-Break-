@@ -1,0 +1,705 @@
+/* used some help from this tutorial: https://www.youtube.com/watch?v=8QKOaTYvYUA&t=366s */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400&display=swap');
+
+/*
+root selector (html tag)
+sets the suedo variables for the websites theme (got this tip from a youtuber named kevin powell)
+*/
+:root {
+    --background: #FFF;
+    --primary: #222;
+    --secondary: #000;
+    --tertiary: #7F5B39;
+    --accent: #FF2B2B;
+    --accent2: #7F5B39;
+
+    --halfPrimary: rgba(255, 255, 255, .7);
+    --halfSecondary: rgba(0, 140, 70, .5);
+    --halfTertiary: rgba(79, 58, 36, .5);
+    --halfAccent: rgba(255,255, 255, .5);
+    --halfAccent2: rgba(255, 162, 0, 0.25);
+}
+/*box-sizing is used to include border and padding in the total witdth/ height*/
+/* navbar was guided & inspired by Kevin Powell's video:https://www.youtube.com/watch?v=8QKOaTYvYUA 
+it uses a checkbox to create a drop down menu
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    color: var(--primary);
+    background: var(--halfSecondary);
+}
+
+body {
+    margin: 0;
+    background: var(--halfTertiary);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
+header {
+    background: var(--primary);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    border-bottom: solid 2px var(--background);
+    top: 0;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 200ms ease-in-out;
+    border-bottom: solid 2px var(--tertiary);
+}
+
+nav ul {
+    margin: 1em 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: var(--accent);
+    transition: 0.125s;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle:checked~nav {
+    transform: scale(1);
+    transition: opacity 100ms ease-in-out 125ms;
+}
+
+.nav-toggle:checked~nav a {
+    opacity: 1;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: var(--secondary);
+    height: 4px;
+    width: 2.5em;
+    border-radius: 4px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 9px;
+}
+
+.nav-toggle-label span::after {
+    top: 9px;
+}
+
+#logo {
+    height: 100px;
+    object-fit: contain;
+}
+
+.exLink {
+    text-decoration: none;
+    color: var(--accent2);
+}
+
+.exLink:hover {
+    color: var(--accent);
+}
+
+.exLink:active {
+    color: var(--accent);
+}
+
+.exLink:visited {
+    color: var(--secondary);
+}
+
+.exLink:visited.exLink:hover {
+    color: var(--accent2);
+}
+
+#indexBanner {
+    background: var(--tertiary) url(../images/IR_Galway6.jpg) no-repeat;
+    background-size: 100% auto;
+}
+
+#blogBanner {
+    background: var(--tertiary) url(../images/IR_Galway6.jpg) no-repeat;
+    background-size: 100% auto;
+}
+
+#aboutBanner {
+    background: var(--tertiary) url(../images/IR_Galway6.jpg) no-repeat;
+    background-size: 100% auto;
+}
+
+#contactBanner {
+    background: var(--tertiary) url(../images/IR_Galway6.jpg) no-repeat;
+    background-size: 100% auto;
+}
+
+.banner {
+    border: solid 1px var(--primary);
+    background: var(--tertiary);
+    background-size: 100% auto;
+    width: 100%;
+    height: 350px;
+    margin: 0;
+}
+
+.bannerH {
+    text-align: center;
+
+}
+
+.title {
+    width: 30rem;
+    margin-top: 1.5em;
+    padding: 1em 0.2em 0 0.2em;
+    color: var(--background);
+    font-family: 'Concert One', cursive;
+    font-size: 3em;
+}
+
+.subtitle {
+    padding-right: 1em;
+    color: var(--primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    width: 80%;
+    margin: -2em auto;
+    font-size: 1em;
+    border-radius: 25px;
+}
+
+p {
+    color: var(--tertiary);
+    text-align: justify;
+    padding: 25px 50px;
+}
+
+main {
+    text-align: center;
+
+}
+
+main h2 {
+    color: var(--primary);
+    background-color: var(--background);
+    padding: 10px 0 10px 0;
+    margin: 0;
+    font-size: 2em;
+    border-bottom: solid 2px var(--accent);
+
+}
+
+.hideWhenSmall {
+    display: none;
+}
+
+
+hr {
+    border: solid 1px var(--accent2);
+    width: 90%;
+    margin-bottom: 2em;
+}
+
+form {
+    margin: 50px -2px;
+    padding: 0 50px;
+    background-color: var(--primary);
+    border: solid 2px var(--secondary);
+    border-top: 0px;
+    min-height: 800px;
+}
+
+.form {
+    margin: auto;
+    background-color: var(--halfPrimary);
+}
+
+.formH3 {
+    color: var(--secondary);
+    border-bottom: solid 2px var(--accent2);
+    padding: 0 0 2em 0;
+    font-size: 1.8em;
+}
+
+.formP {
+
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.formItem {
+    display: flow-root;
+    width: 90%;
+    margin: auto;
+    color: var(--secondary);
+    font-size: 1.5em;
+}
+
+textarea,
+input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 50%;
+    min-height: 40px;
+    margin: 1em 0;
+    font-size: 1em;
+    padding: 0.5em;
+    border: solid 1px var(--background);
+    border-radius: 5px;
+    color: var(--tertiary);
+}
+
+input:hover {
+    border: solid 1px var(--accent2);
+}
+
+input:hover {
+    border: solid 1px var(--accent2);
+}
+
+textarea:focus,
+input:focus {
+    background-color: var(--halfSecondary);
+    color: var(--secondary);
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: var(--halfTertiary);
+}
+
+#submit {
+    padding: 1em;
+    width: 30%;
+    border-radius: 5px;
+    border: solid 2px var(--primary);
+    color: var(--primary);
+    background-color: var(--secondary);
+    font-size: .8em;
+}
+
+
+#submit:hover {
+    background-color: var(--accent2);
+    border: solid 2px var(--accent);
+}
+
+.blogImg {
+    width: 100%;
+}
+
+.card {
+    margin-top: 400px;
+}
+
+.card h2 {
+    background-color: var(--background);
+    text-align: center;
+    border-top: solid 2px var(--secondary);
+    border-radius: 0;
+    padding-top: 0.5em;
+    margin: 0;
+    width: 100%;
+    height: 75px;
+    font-size: 2em;
+}
+
+#blogTitleCard {
+    background-color: var(--halfPrimary);
+    width: 90%;
+    margin: 200px auto;
+    height: auto;
+}
+
+#blogCardDiv {
+    background-color: var(--primary);
+    width: 100%;
+}
+
+.video {
+    width: 100%;
+    height: 563px;
+}
+
+table {
+    margin: auto;
+    padding: 50px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 15px;
+    color: var(--secondary);
+    border: solid 1px var(--secondary);
+    background-color: var(--halfSecondary);
+    border-radius: 2px;
+}
+
+th {
+    background-color: var(--background);
+    border-bottom: solid 2px var(--accent2);
+    color: var(--primary);
+
+}
+
+strong {
+    color: var(--secondary);
+    font-size: 1.5em;
+}
+
+legend {
+    text-align: center;
+    padding: 1em;
+    margin: 50px 50px 0 50px;
+    background-color: var(--background);
+    border-bottom: solid 2px var(--accent);
+}
+
+.event {
+    background-color: var(--accent2);
+    color: var(--primary);
+    border-radius: 5px;
+    transition: 200ms;
+}
+
+.event:hover {
+    background-color: var(--halfAccent2);
+    transition: 200ms;
+    color: var(--background);
+}
+
+footer {
+    background: var(--secondary);
+    padding: 2em;
+    border-top: solid 4px var(--background);
+    height: 300px;
+    color: var(--primary);
+}
+
+footer h3 {
+    text-align: center;
+}
+
+.footerLinks,
+.footerLinks:visited {
+    color: var(--primary);
+}
+
+.footerLinks:hover {
+    color: var(--accent2);
+}
+
+/************************************************************/
+/************************************************************/
+/************************************************************/
+@media screen and (min-width:1000px) {
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .form {
+        max-width: 1500px;
+        width: 70%;
+        margin: -450px auto auto auto;
+        background-color: var(--halfPrimary);
+    }
+
+    form {
+
+        margin: 50px -2px;
+        padding: 0 50px;
+        background-color: var(--primary);
+        border: solid 2px var(--secondary);
+        border-top: 0px;
+        min-height: 800px;
+        text-align: left;
+        font-size: .7em;
+    }
+
+    .formH3 {
+        color: var(--secondary);
+        border-bottom: solid 2px var(--accent2);
+        padding: 1em 0 .5em 0;
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        margin: 1em 0;
+        padding: 0.5em;
+        border: solid 1px var(--background);
+        color: var(--tertiary);
+    }
+
+
+    #blogPostCard1 {
+        margin-left: 30%;
+    }
+
+    #blogPostCard2 {
+        margin-right: 30%;
+    }
+
+    #blogPostCard3 {
+        margin-left: 30%;
+    }
+
+    .blogImg {
+        width: 80%;
+        max-width: 1000px;
+        margin: 0;
+        border: solid 2px var(--accent);
+
+    }
+
+    .card {
+        margin-top: 150px;
+    }
+
+    .card h2 {
+        background-color: var(--background);
+        text-align: center;
+        border-top: solid 2px var(--accent);
+        border-radius: 0;
+        padding-top: 0.5em;
+        margin: 0;
+        width: 100%;
+        height: 75px;
+    }
+
+    #blogTitleCard {
+        background-color: var(--halfPrimary);
+        width: 60%;
+        margin: 200px;
+        height: 500px;
+        z-index: 999;
+    }
+
+    #blogCardDiv {
+        background-color: var(--primary);
+        width: 100%;
+    }
+
+    #subtitleContact {
+        margin-top: 130px;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        background-color: var(--background);
+        border-bottom: solid 2px var(--primary);
+    }
+
+    #logo {
+        grid-column: 2 / 1;
+        height: 80px;
+        width: 160px;
+        margin-top: 10pxn ;
+        object-fit: contain;
+        border-right: solid 0px var(--secondary);
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: var(--accent);
+        position: absolute;
+        top: -1em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+        border-radius: 4px;
+    }
+
+    nav a:hover::before {
+        transform: scale(1);
+    }
+
+    .title {
+        text-align: center;
+        margin: 1em auto;
+        font-size: 6em;
+    }
+
+    .subtitle {
+        margin: -2.5em auto;
+        width: 50%;
+        font-size: 1.8em;
+        font-weight: 900;
+        background-color: var(--halfAccent);
+    }
+
+
+    .banner {
+        background-size: 100% auto;
+        width: 100%;
+        height: 700px;
+        margin: 0;
+    }
+
+    .hideWhenBig {
+        display: none;
+    }
+
+    p {
+
+        text-align: justify;
+    }
+
+    main {
+        margin: 25px 50px 25px 50px;
+        text-align: center;
+
+    }
+
+    main h2 {
+        color: var(--primary);
+        background-color: var(--background);
+        font-size: 2em;
+        padding: 10px 0 10px 0;
+        border-top: solid 2px var(--accent);
+        border-bottom: solid 0px var(--accent);
+    }
+
+    .video {
+        width: 900px;
+        height: 563px;
+    }
+
+    main img {
+        margin: 25px 0 50px;
+    }
+
+    section {
+        margin: 0;
+        display: grid;
+
+    }
+
+    .gridContainer {
+        grid-template-columns: auto auto;
+        border: solid 2px var(--secondary);
+        border-top-width: 0px;
+        padding: 50px;
+        margin: 50px 0;
+    }
+
+    .gridContainerNoSpace {
+        grid-template-columns: auto auto;
+        border: solid 2px var(--secondary);
+        border-top-width: 0px;
+        padding: 50px;
+        margin: -25px -1px 50px -1px;
+    }
+
+    .gridContainerNoBorder {
+        grid-template-columns: auto auto;
+    }
+
+    .item1 {
+        width: 100%;
+        float: left;
+        grid-column: auto;
+    }
+
+    .item2 {
+        width: 100%;
+        float: right;
+        grid-column: auto;
+    }
+
+
+    p {
+        padding: 1em;
+        display: grid;
+        height: auto;
+        color: var(--tertiary);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+
+}

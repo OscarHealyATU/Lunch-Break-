@@ -1,0 +1,95 @@
+:root {
+  /* colours */
+  --col_film: #292421;
+  --col_filmEdge: #3e3a37;
+  --col_light: rgba(255,255,255,1);
+  --col_lightAlt: rgba(255,255,255,.5);
+  /* gradients */
+  --col_grad: linear-gradient(to bottom, #ff8a00, #da1b60); 
+  /* logo size */
+  --size_logo: 50px;
+  --size_lRim: 60px;  
+  --size_lStroke: 4px;
+  --size_lStroke2: 9px;
+  --logoMargin: 14px; 
+
+  /* disable horizonal scrolling */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* trouble shooting css */
+.border {
+  border: solid 1px red;
+}
+main{
+  min-height: 80vh;
+}
+
+canvas{
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.sprocket {
+  background-image: url(../assets/sprocket.svg);
+  background-color: var(--col_filmEdge);
+  background-repeat: space;
+  animation: sprockets 2s linear infinite;
+  opacity: .9;
+  width: 105%;
+  height: 20px;
+  margin-left: -27px;
+}
+
+header {
+  background-color: var(--col_film);
+}
+
+.logoRing3 {
+  display: inline-flex;
+  border: solid var(--size_lStroke) var(--col_light);
+  border-radius: 50%;
+}
+
+.logoRing2 {
+  border: var(--size_lStroke2) solid var(--col_lightAlt);
+  border-top: var(--size_lStroke2) solid var(--col_light);
+  border-bottom: var(--size_lStroke2) solid var(--col_light);
+  
+  border-radius: 50%;
+  z-index: 1;
+}
+.logoRing2:hover {
+  animation: spin 2s linear infinite;
+}
+
+.logoRing1 {
+  width: var(--size_lRim);
+  height: var(--size_lRim);
+}
+
+.logo {
+  position: absolute;
+  margin: var(--logoMargin) 0;
+  height: var(--size_logo);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sprockets {
+  0% {
+    translate: 0px;
+  }
+
+  100% {
+    translate: 27px;
+  }
+}
