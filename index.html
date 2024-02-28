@@ -1,207 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Oscar Healy | G00424324 -->
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flip each time table</title>
+    <meta charset="utf-8">
+    <title>imageRetold | Home</title>
+    <!-- CDN Links -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <style>
-        body{
-            background-color: black;
-
-        }
-        table {
-            margin: auto;
-            margin-top: 80px;
-        }
-        table,
-        th,
-        td {
-            border: solid 2px radial-gradient(red,green, blue);
-            min-width: 50px;
-            min-height: 50px;
-        }
-
-        .flip-card {
-            background-color: transparent;
-            min-width: 200px;
-            height: 50px;
-            border: 2px solid floralwhite;           
-            perspective: 1000px;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            /* Safari */
-            backface-visibility: hidden;
-        }
-
-        .flip-card-front {
-            background-color: #42956a;
-            color: black;
-        }
-        #FlipCardHeading {
-            background-color: #34684a;
-            color: white;
-        }
-        #FlipCardHeadingBack {
-            background-color: #be3525;
-            color: white;
-        }
-          p{
-            opacity: .8;
-          }
-        .flip-card-back {
-            background-color: #434038;
-            color: white;
-            transform: rotateY(180deg);
-        }
-        
-        .off{
-            background-color: #34684a;
-        }
-        .Break{
-            background-color: #42956a;
-        }
-        .groupProject{
-            background-color: #e9d5b7;
-        }
-        .AppliedNetworking {
-            background-color: #df520d;
-        }
-        .ProjectManagement {
-            background-color: #f5893a;
-        }
-        .ObjectOrientedComputing{
-            background-color: #f5a968;
-        }
-        .DatabaseManagement{
-            background-color: #f5c99d;
-        }
-        .AppliedDigitalMedia{
-            background-color: #f6e6d7;
-        }
-        
-
-        .block {
-    position: relative;
-    background: #342c22;
-    padding: 10px;
-  }
-  
-  .block:before, .block:after {
-    content: '';
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
-      #0000ff, #00ff00,#ffff00, #ff0000);
-    background-size: 400%;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    z-index: -1;
-    animation: steam 40s linear infinite;
-  }
-  
-  @keyframes steam {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 400% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-  
-  .block:after {
-    filter: blur(50px);
-  }
-    </style>
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
+    <link href="styles/custom.css" rel="stylesheet">
 </head>
 
-<body>
-    <table class="block">
-        <tbody>
-            <tr>
-                <th class="flip-card" colspan="6">
-                    <div class="flip-card-inner">
-                        <div id="FlipCardHeading" class="flip-card-front">
-                            <h3>Flip Card Time Table</h3>
-                        </div>
-                        <div id="FlipCardHeadingBack" class="flip-card-back">
-                            <p>Flip the card to find the class</p>
-                        </div>
-                    </div>
-                </th>
-            <tr></tr>
-            <script>
-                var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-                var subjects= [                                                                                                                                 //Subjects for:
-                    ["groupProject", "Break", "Break", "AppliedNetworking", "ProjectManagement", "ObjectOrientedComputing", "ObjectOrientedComputing", "off", "off"],   //monday
-                    ["off", "off", "groupProject", "Break", "AppliedNetworking", "ObjectOrientedComputing", "groupProject", "groupProject", "off"],                     //tuesday
-                    ["AppliedDigitalMedia", "ObjectOrientedComputing", "Break", "AppliedDigitalMedia", "AppliedDigitalMedia", "Break", "groupProject", "off", "off"],   //wednesday
-                    ["ProjectManagement", "Break", "Break", "ProjectManagement", "DatabaseManagement", "AppliedNetworking", "AppliedNetworking", "off", "off"],         //thursday
-                    ["off", "off", "DatabaseManagement", "DatabaseManagement", "DatabaseManagement", "off", "off", "off", "off"]                                                       //friday
-                ];
-                var week = [                                                                                                                                     //Subjects for:
-                    ["group Project", "Break", "Break", "Applied Networking", "Project Management", "Object Oriented Computing", "Object Oriented Computing", "", ""],  //monday
-                    ["", "", "group Project", "Break", "Applied Networking", "Object Oriented Computing", "group Project", "group Project", ""],                        //tuesday
-                    ["Applied Digital Media", "Object Oriented Computing", "Break", "Applied Digital Media", "Applied Digital Media", "Break", "group Project", "", ""],//wednesday
-                    ["Project Management", "Break", "Break", "Project Management", "Database Management", "Applied Networking", "Applied Networking", "", ""],          //thursday
-                    ["", "", "Database Management", "Database Management", "Database Management", "", "", "", ""]                                                       //friday
-                ];
-                var rooms = [                                                                                   //rooms for:
-                    [470, "No Class", "No Class", 939, 940, 304, 304, "No Class", "No Class"],                      //monday
-                    ["No Class", "No Class", 158, "No Class", 995, 470, 910, 910, "No Class"],                      //tuesday
-                    [1032, "PF03", "No Class", 484, 484, "No Class", 910, "No Class", "No Class"],                  //wednesday
-                    [996, "No Class", "No Class", 480, 941, 480, 480, "No Class", "No Class"],                      //thursday
-                    ["No Class", "No Class", 939, 910, 910, "No Class", "No Class", "No Class", "No Class"]         //friday
-                ];
+<body class="bg-light">
+    <!-- Header  -->
+    <script src="boilerplate/header.js"></script>
+  <!-- jquery cursor, canvas -->
+  <script src="scripts/cursor3.js"></script>
+  <canvas id="myCanvas"></canvas>
+    <div class="container">
+        <main class="bg-white">
+            
 
-                var flipCardP1 = '<th class="flip-card"><div class="flip-card-inner"><div class="flip-card-front ';
-                var flipCardP1End ='"><p>';
-                var flipCardP2 = '</p></div><div class="flip-card-back"><p>';
-                var flipCardP3 = '</p></div></div></th>';
-                var amPm, tableRows = flipCardP1 + flipCardP1End + "Time" + flipCardP2 + "Days" + flipCardP3, time = 9;
-
-                for (let i = 0; i < days.length; i++) tableRows += flipCardP1 + flipCardP1End + days[i] + flipCardP2 + "Day " + (i + 1) + " of the week" + flipCardP3;
-                for (let i = 0; i < 8; i++) {
-
-                    if (i <= 3) timeAmPm = time, amPm = 'am';
-                    else timeAmPm = -3, amPm = 'pm';
-                    tableRows += '<tr>' + flipCardP1 + flipCardP1End + (time + i) + ':00' + flipCardP2 + (timeAmPm + i) + ':00 ' + amPm + flipCardP3;
-
-                    for (let j = 0; j < 5; j++) tableRows += flipCardP1 + subjects[j][i] +flipCardP1End + week[j][i] + flipCardP2 + rooms[j][i] + flipCardP3;
-                }
-                document.write(tableRows);
-
-
-
-                //<tr><th class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>'+variable+'</p></div><div class="flip-card-back"><p>'+variable+'</p></div></div></th></tr>
-            </script>
-        </tbody>
-    </table>
+        </main>
+        <side class="bg-dark"></side>
     </div>
+
+    <script src="boilerplate/footer.js"></script>
 </body>
 
 </html>
