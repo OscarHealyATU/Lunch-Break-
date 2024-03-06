@@ -28,7 +28,7 @@ main{
 canvas{
   position: absolute;
   z-index: 999;
-  pointer-events: none;
+  pointer-events: all;
 }
 
 .sprocket {
@@ -74,6 +74,7 @@ header {
   margin: var(--logoMargin) 0;
   height: var(--size_logo);
 }
+
 
 @keyframes spin {
   0% {
