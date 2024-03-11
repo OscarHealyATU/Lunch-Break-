@@ -3,35 +3,35 @@ document.write(`<footer class="py-5 bg-white p-5">
   <div class="col-6 col-md-2 mb-3">
     <h5>Section</h5>
     <ul class="nav flex-column">
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+      <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
+      <li class="nav-item mb-2"><a href="Contact.html" class="nav-link p-0 text-muted">Contact</a></li>
+      <li class="nav-item mb-2"><a href="Pricing.html" class="nav-link p-0 text-muted">Pricing</a></li>
+      <li class="nav-item mb-2"><a href="faq.html" class="nav-link p-0 text-muted">FAQs</a></li>
+      <li class="nav-item mb-2"><a href="About.html" class="nav-link p-0 text-muted">About</a></li>
     </ul>
   </div>
-
   <div class="col-6 col-md-2 mb-3">
     <h5>Section</h5>
     <ul class="nav flex-column">
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+      <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
+      <li class="nav-item mb-2"><a href="Contact.html" class="nav-link p-0 text-muted">Contact</a></li>
+      <li class="nav-item mb-2"><a href="Pricing.html" class="nav-link p-0 text-muted">Pricing</a></li>
+      <li class="nav-item mb-2"><a href="faq.html" class="nav-link p-0 text-muted">FAQs</a></li>
+      <li class="nav-item mb-2"><a href="About.html" class="nav-link p-0 text-muted">About</a></li>
     </ul>
   </div>
-
   <div class="col-6 col-md-2 mb-3">
     <h5>Section</h5>
     <ul class="nav flex-column">
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+      <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
+      <li class="nav-item mb-2"><a href="Contact.html" class="nav-link p-0 text-muted">Contact</a></li>
+      <li class="nav-item mb-2"><a href="Pricing.html" class="nav-link p-0 text-muted">Pricing</a></li>
+      <li class="nav-item mb-2"><a href="faq.html" class="nav-link p-0 text-muted">FAQs</a></li>
+      <li class="nav-item mb-2"><a href="About.html" class="nav-link p-0 text-muted">About</a></li>
     </ul>
   </div>
+
+  
 
   <div class="col-md-5 offset-md-1 mb-3">
     <form>
