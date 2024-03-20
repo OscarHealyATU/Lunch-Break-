@@ -77,6 +77,11 @@ header {
 .custom-shadow{
   border-top: solid 3px #3e3a37!important;
 }
+.card img{
+  height: 16rem;
+  object-fit: cover;
+  contain: content;
+}
 
 @keyframes spin {
   0% {
