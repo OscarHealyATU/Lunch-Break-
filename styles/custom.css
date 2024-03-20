@@ -74,7 +74,9 @@ header {
   margin: var(--logoMargin) 0;
   height: var(--size_logo);
 }
-
+.custom-shadow{
+  border-top: solid 3px #3e3a37!important;
+}
 
 @keyframes spin {
   0% {

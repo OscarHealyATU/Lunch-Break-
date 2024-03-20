@@ -12,7 +12,6 @@ document.write(`  <div class="sprocket"></div>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
                 <li><a href="services.html" class="nav-link px-2 text-white">Services</a></li>
-                <li><a href="Pricing.html" class="nav-link px-2 text-white">Pricing</a></li>
                 <li><a href="faq.html" class="nav-link px-2 text-white">FAQs</a></li>
                 <li><a href="About.html" class="nav-link px-2 text-white">About</a></li>
                 <li><a href="Contact.html" class="nav-link px-2 text-white">Contact</a></li>
@@ -25,7 +24,7 @@ document.write(`  <div class="sprocket"></div>
 
             <div class="text-end">
                 <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
+                <button type="button" class="btn btn-warning">Sign-up</button>              
             </div>
         </div>
     </div>
