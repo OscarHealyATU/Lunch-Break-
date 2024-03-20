@@ -20,14 +20,11 @@
     <!-- <script src="scripts/cursor.js"></script>-->
     <canvas id="myCanvas"></canvas>
     <div class="container">
-        <main class="bg-white">
-            <div class="p-5 mb-2 mt-3 bg-warning text-white fs-1 text-center">
+        <main class="bg-white shadow p-5 mb-5">
+            <div class="p-5 mb-5 mt-3 bg-success text-white fs-1 text-center rounded-4">
                 Contact Us
             </div>
-            <p class="text-center">Call: 123 456 7890</p>
-            <p class="text-center">Email: <a href="mailto:imageretold@gmail.com"> ImageRetold@gmail.com</a></p>
-
-            <h1 class="text-center">Input Your Message below</h1>
+            <h2 class="text-center">Input Your Message below</h2>
             <form>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -44,14 +41,16 @@
                 </div>
                 <div class="mb-3">
                     <label for="tb" class="form-label">Insert Your Query</label>
-                    <input type="textarea" class="form-control" id="ln" placeholder="Insert Your Query">
+                    <textarea name="tb" class="form-control" id="tb" cols="30" rows="10" placeholder="Insert Your Query"></textarea>
                 </div>
-
                 <button type="submit" class="btn btn-warning">Submit</button>
             </form>
 
         </main>
-        <side class="bg-dark"></side>
+        <side class="bg-dark">
+            <p class="text-center h5">Call: 123 456 7890</p>
+            <p class="text-center h5">Email: <a href="mailto:imageretold@gmail.com"> imageRetold@gmail.com</a></p>
+        </side>
 
 
     </div>
