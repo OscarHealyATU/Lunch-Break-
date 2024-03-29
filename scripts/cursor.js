@@ -5,7 +5,7 @@ $(document).ready(function() {
   enableDrawingCanvas();
   resizeCanvas(window.innerWidth, window.innerHeight);
 });
-
+var toggleFlag = 1;
 var active = true;
 var canvas, context;
 var spread = 2;
@@ -15,6 +15,15 @@ var drawEveryFrame = 1;
 var frame = 0;
 var flipNext = true;
 var points = [];
+
+function toggleCursor() {
+  if (toggleFlag %2 == 0) {
+    document.getElementById("myCanvas").style.pointerEvents = "none";
+  }else{
+    document.getElementById("myCanvas").style.pointerEvents = "all";
+  }
+  toggleFlag++; 
+}
 
 function enableDrawingCanvas() {
   canvas = document.getElementById('myCanvas');
@@ -44,7 +53,7 @@ function animatePoints() {
     var dec = 1 - inc;
     var spreadRate = spread === 1 ? lineWidthStart / (point.lifetime * 2) : lineWidthStart * (1 - inc);
     context.lineWidth = spreadRate;
-    context.strokeStyle = 'rgb(' + Math.floor(255) + ',' + Math.floor(200 - (255 * dec)) + ',' + Math.floor(200 - (255 * inc)) + ')';
+    context.strokeStyle = 'rgb(' + Math.floor(245 - (45 * inc)) + ',' + Math.floor(233 - (185 * dec)) + ',' + Math.floor(37 - (145 * inc)) + ')';
     var lastPoint = points[i - 1] || point;
     var distance = Point.distance(lastPoint, point);
     var midpoint = Point.midPoint(lastPoint, point);

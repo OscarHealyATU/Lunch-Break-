@@ -1,4 +1,5 @@
-document.write(`  <div class="sprocket"></div>
+
+document.write(`<div class="sprocket"></div><div class="sticky-top">
 <header class="p-1 text-white">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -15,7 +16,9 @@ document.write(`  <div class="sprocket"></div>
                 <li><a href="faq.html" class="nav-link px-2 text-white">FAQs</a></li>
                 <li><a href="About.html" class="nav-link px-2 text-white">About</a></li>
                 <li><a href="Contact.html" class="nav-link px-2 text-white">Contact</a></li>
+                <button type="button" class="btn btn-outline-secondary" onclick="toggleCursor()">Toggle Cursor</button>     
             </ul>
+            
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 <input type="search" class="form-control form-control-dark" placeholder="Search..."
@@ -23,11 +26,13 @@ document.write(`  <div class="sprocket"></div>
             </form>
 
             <div class="text-end">
+            
                 <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>              
+                <button type="button" class="btn btn-warning">Sign-up</button>     
+                
             </div>
         </div>
     </div>
 </header>
-<div class="container"></div>
-<div class="sprocket"></div>`);
+<div class="sprocket sticky-top"></div></div>`);
+
