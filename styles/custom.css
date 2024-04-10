@@ -92,6 +92,12 @@ li:active{
   object-fit: cover;
   contain: content;
 }
+.card-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 @keyframes spin {
   0% {
