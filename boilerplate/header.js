@@ -1,4 +1,3 @@
-
 document.write(`<div class="sprocket"></div><div class="sticky-top">
 <header class="p-1 text-white">
     <div class="container">

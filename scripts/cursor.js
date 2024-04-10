@@ -5,7 +5,7 @@ $(document).ready(function() {
   enableDrawingCanvas();
   resizeCanvas(window.innerWidth, window.innerHeight);
 });
-var toggleFlag = 1;
+var toggleFlag = sessionStorage.getItem("Cursor");
 var active = true;
 var canvas, context;
 var spread = 2;
@@ -18,13 +18,16 @@ var points = [];
 
 function toggleCursor() {
   if (toggleFlag %2 == 0) {
+    alert("cursor should be off now" + toggleFlag);
     document.getElementById("myCanvas").style.pointerEvents = "none";
+    toggleFlag++;
   }else{
+    alert("cursor should be on now" + toggleFlag);
     document.getElementById("myCanvas").style.pointerEvents = "all";
-  }
-  toggleFlag++; 
+    toggleFlag++;
+  } 
 }
-
+//////////////////////////////////////
 function enableDrawingCanvas() {
   canvas = document.getElementById('myCanvas');
   context = canvas.getContext('2d');
