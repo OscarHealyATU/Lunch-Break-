@@ -16,7 +16,7 @@
   /* disable horizonal scrolling */
   max-width: 100%;
   overflow-x: hidden;
-}
+} 
 /* trouble shooting css */
 .border {
   border: solid 1px red;
@@ -45,7 +45,17 @@ canvas{
 header {
   background-color: var(--col_film);
 }
-
+li:hover{
+  opacity: .5;
+}
+li:active{
+  border-radius: 25px;
+  background: linear-gradient(
+    45deg,
+    hsla(168, 85%, 52%, 0.5),
+    hsla(263, 88%, 45%, 0.5) 100%
+  );
+}
 .logoRing3 {
   display: inline-flex;
   border: solid var(--size_lStroke) var(--col_light);
@@ -76,6 +86,17 @@ header {
 }
 .custom-shadow{
   border-top: solid 3px #3e3a37!important;
+}
+.card img{
+  height: 16rem;
+  object-fit: cover;
+  contain: content;
+}
+.card-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @keyframes spin {
