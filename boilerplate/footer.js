@@ -1,3 +1,25 @@
+var cursorToggleBtn = document.getElementById("toggleCursor");
+var body = document.body;
+
+cursorToggleBtn.addEventListener('click', function () {
+  alert("here");
+
+  var isCursorOn = localStorage.getItem('cursor') === 'true';
+
+  isCursorOn = !isCursorOn;
+  localStorage.setItem('cursor', isCursorOn);
+
+  if (!isCursorOn) {
+    body.classList.add('cursor');
+    document.getElementById("myCanvas").style.pointerEvents = "none";
+
+  }else{
+    body.classList.remove('cursor');
+    document.getElementById("myCanvas").style.pointerEvents = "all";
+  }
+
+});
+
 document.write(`<footer class="py-5 bg-white p-5">
 <div class="row">
   <div class="col-6 col-md-2 mb-3">

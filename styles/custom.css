@@ -98,6 +98,10 @@ li:active{
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+#logoBanner{
+  display: block;
+  margin: auto;
+}
 
 @keyframes spin {
   0% {

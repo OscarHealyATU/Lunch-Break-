@@ -1,1 +1,0 @@
-sessionStorage.setItem("Cursor",0);

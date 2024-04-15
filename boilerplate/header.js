@@ -15,7 +15,7 @@ document.write(`<div class="sprocket"></div><div class="sticky-top">
                 <li><a href="faq.html" class="nav-link px-2 text-white">FAQs</a></li>
                 <li><a href="About.html" class="nav-link px-2 text-white">About</a></li>
                 <li><a href="Contact.html" class="nav-link px-2 text-white">Contact</a></li>
-                <button type="button" class="btn btn-outline-secondary" onclick="toggleCursor()">Toggle Cursor</button>     
+                <button type="button" class="btn btn-outline-secondary" id="oggleCursor">Toggle Cursor</button>     
             </ul>
             
 

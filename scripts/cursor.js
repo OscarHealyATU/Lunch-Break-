@@ -5,7 +5,8 @@ $(document).ready(function() {
   enableDrawingCanvas();
   resizeCanvas(window.innerWidth, window.innerHeight);
 });
-var toggleFlag = sessionStorage.getItem("Cursor");
+
+
 var active = true;
 var canvas, context;
 var spread = 2;
@@ -16,17 +17,7 @@ var frame = 0;
 var flipNext = true;
 var points = [];
 
-function toggleCursor() {
-  if (toggleFlag %2 == 0) {
-    alert("cursor should be off now" + toggleFlag);
-    document.getElementById("myCanvas").style.pointerEvents = "none";
-    toggleFlag++;
-  }else{
-    alert("cursor should be on now" + toggleFlag);
-    document.getElementById("myCanvas").style.pointerEvents = "all";
-    toggleFlag++;
-  } 
-}
+
 //////////////////////////////////////
 function enableDrawingCanvas() {
   canvas = document.getElementById('myCanvas');
@@ -38,7 +29,7 @@ function enableDrawingCanvas() {
 function draw() {
   if (active) {
     animatePoints();
-    window.requestAnimFrame(draw);
+      requestAnimFrame(draw);
   }
 }
 
@@ -73,7 +64,7 @@ function addPoint(x, y) {
   points.push(new Point(x, y, 0, flipNext));
 }
 
-window.requestAnimFrame = (function(callback) {
+requestAnimFrame = (function(callback) {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
     window.setTimeout(callback, 1000 / 60);
   };
