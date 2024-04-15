@@ -1,3 +1,11 @@
+function isActive(){
+    if(location.href == "https://gray-ground-0d7964d03.4.azurestaticapps.net/index.html") return "text-success";
+    else if(location.href == "https://gray-ground-0d7964d03.4.azurestaticapps.net/services.html") return "text-success";
+    else if(location.href == "https://gray-ground-0d7964d03.4.azurestaticapps.net/faq.html") return "text-success";
+    else if(location.href == "https://gray-ground-0d7964d03.4.azurestaticapps.net/About.html") return "text-success";
+    else if(location.href == "https://gray-ground-0d7964d03.4.azurestaticapps.net/Contact.html") return "text-success";
+    else return "text-danger";  
+}
 document.write(`<div class="sprocket"></div><div class="sticky-top">
 <header class="p-1 text-white">
     <div class="container">
@@ -10,12 +18,12 @@ document.write(`<div class="sprocket"></div><div class="sticky-top">
             </div>                  
             
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="services.html" class="nav-link px-2 text-white">Services</a></li>
-                <li><a href="faq.html" class="nav-link px-2 text-white">FAQs</a></li>
-                <li><a href="About.html" class="nav-link px-2 text-white">About</a></li>
-                <li><a href="Contact.html" class="nav-link px-2 text-white">Contact</a></li>
-                <button type="button" class="btn btn-outline-secondary" id="oggleCursor">Toggle Cursor</button>     
+                <li><a href="index.html" class="nav-link px-2 ` + isActive() + `" id="homeLink">Home</a></li>
+                <li><a href="services.html" class="nav-link px-2 ` + isActive() + `" id="serviceLink">Services</a></li>
+                <li><a href="faq.html" class="nav-link px-2 ` + isActive() + `" id="faqLink">FAQs</a></li>
+                <li><a href="About.html" class="nav-link px-2  ` + isActive() + `" id="aboutLink">About</a></li>
+                <li><a href="Contact.html" class="nav-link px-2  ` + isActive() + `" id="contactLink">Contact</a></li>
+                <button type="button" class="btn btn-outline-secondary" id="toggleCursor">Toggle Cursor</button>     
             </ul>
             
 
