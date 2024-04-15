@@ -121,3 +121,6 @@ li:active{
     translate: 27px;
   }
 }
+li,ul{
+  list-style-type: none;
+}
