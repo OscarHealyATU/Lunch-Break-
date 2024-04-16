@@ -44,7 +44,7 @@
                         <!-- use javascript variables -->
                         <div class="image">
                             <!-- <img src="images/customer/item-1.png" alt="" srcset=""> -->
-                            <img src="assets/placeholder.png" width="300" alt="" srcset="">
+                            <img src="assets/placeholder.png" width="300" alt="" id="thumb" srcset="">
                         </div>
                         <div class="description">
                             <span >service chosen: </span>
@@ -60,7 +60,7 @@
                                 <img src="assets/icons/minus.png" alt="" width="32"/>
                             </button>
                             <form action="/action_page.php">
-                                <input type="file" id="myFile" name="filename" multiple>
+                                <input type="file" id="myFile" name="filename" multiple  onclick="changeImg()"  >
                                 <input type="submit">
                               </form>
                         </div>
@@ -121,7 +121,10 @@ $('.plusBtn').on('click', function(e) {
  
     $input.val(quantity);
 });
-
+function changeImg() {
+    var file = document.getElementById("myFile").value;
+    
+}
     </script>
 
 
