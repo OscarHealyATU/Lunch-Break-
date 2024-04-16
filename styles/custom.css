@@ -24,7 +24,9 @@
 main{
   min-height: 80vh;
 }
-
+#cart{
+  filter: invert(40%);
+}
 canvas{
   position: absolute;
   z-index: 999;
