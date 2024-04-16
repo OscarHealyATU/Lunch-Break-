@@ -52,11 +52,11 @@
                             <span id="itemTotal"></span>
                         </div>
                         <div class="quantity">
-                            <button class="btn btn-warning btn-outline-info  plusBtn" type="button" name="button">
+                            <button class="btn btn-warning btn-outline-info  plusBtn" type="button" name="button" id="btnPlus">
                                 <img src="assets/icons/plus.png" width="32" />
                             </button>
                             <input type="text" name="itemquantity" id="quantity" value="1">
-                            <button class="btn btn-light minusBtn" type="button" name="button">
+                            <button class="btn btn-light minusBtn" type="button" name="button" id="btnMinus">
                                 <img src="assets/icons/minus.png" alt="" width="32"/>
                             </button>
                             <form action="/action_page.php">
@@ -86,8 +86,8 @@
             quant = document.getElementById("quantity").value;
             subtotal = Number(quant)*Number(array[1]);
              document.getElementById("subTotal").innerHTML = "€" + subtotal;
-             location.reload();
-
+                
+        
         }
 
         $('.minusBtn').on('click', function(e) {
