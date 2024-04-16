@@ -60,5 +60,12 @@ if (document.getElementById("contactLink").href == url) {
 }
 
 function toCart() {
-    location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
+    // if statement for development purposes
+    // checks if current page has local host url and changes redirect path if it is. 
+    if (location.href.includes("//127.0.0.1:5500/Lunch-Break")) {
+        location.href = "http://127.0.0.1:5500/Lunch-Break-/cart.html";   
+    }else{
+        location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
+    }
+    
 }

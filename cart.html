@@ -31,37 +31,17 @@
     <!-- jquery cursor, canvas -->
     <script src="scripts/cursor.js"></script>
     <canvas id="myCanvas"></canvas>
-    <div class="container ">
+    <div class="container">
         <main class="bg-white shadow">
             <div class="container shoppingCart">
 
-                <div class="title">Shopping Cart</div>
-
-                    <div class="buttons">
-                        <span class="deleteBtn"></span>
-                        <span class="favBtn"></span>
-                        <!--use javascrip variables 
-                        <div class="image">
-                            <img src="images/customer/item-1.png" alt="" srcset="">
-                        </div>
-                        <div class="description">
-                            <span>restoration</span>
-                            <span>Sharpening</span>
-                            <span>retouching</span>
-                        </div>
-                        <div class="quantity"><button><input type="text" name="name" id="name" value="1">
-                            </button></div>
-                        <div class="total">
-                            €560
-                        </div>
-
-                    </div>
-                </div> -->
+                <div class="title"><h2 class="text-center pt-5 pb-5 bg-light m-0">Shopping Cart</h2></div>
+                <!-- reference tutorial for cart: https://designmodo.com/shopping-cart-ui/ -->
                 <div class="item">
                     <div class="buttons">
                         <span class="deleteBtn"></span>
                         <span class="favBtn"></span>
-                        <!-- use javascrip variables -->
+                        <!-- use javascript variables -->
                         <div class="image">
                             <!-- <img src="images/customer/item-1.png" alt="" srcset=""> -->
                             <img src="assets/placeholder.png" width="300" alt="" srcset="">
@@ -72,16 +52,15 @@
                             <span>retouching</span>
                         </div>
                         <div class="quantity">
-                            <button class="plus-btn" type="button" name="button">
+                            <button class="btn btn-warning btn-outline-info  plusBtn" type="button" name="button">
                                 <img src="assets/icons/plus.png" width="32" />
                             </button>
-                            <input type="text" name="name" value="1">
-                            <button class="minusBtn" type="button" name="button">
+                            <input type="text" name="itemquantity" value="1">
+                            <button class="btn btn-light minusBtn" type="button" name="button">
                                 <img src="assets/icons/minus.png" alt="" width="32"/>
                             </button>
                         </div>
-                        <div class="total">
-                            €560
+                        <div class="total" id="itemTotal">€
                         </div>
 
                     </div>
@@ -92,6 +71,40 @@
 
 
     </div>
+    <script type="application/javascript">
+
+        $('.minusBtn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var quantity = parseInt($input.val());
+    
+ 
+    if (quantity >= 1) {
+        quantity = quantity - 1;
+    } else {
+        quantity = 0;
+    }
+ 
+  $input.val(quantity);
+ 
+});
+ 
+$('.plusBtn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var quantity = parseInt($input.val());
+ 
+    if (quantity <= 100) {
+        quantity = quantity + 1;
+    } else {
+        quantity =100;
+    }
+ 
+    $input.val(quantity);
+});
+    </script>
 
 
     <script src="boilerplate/footer.js"></script>
