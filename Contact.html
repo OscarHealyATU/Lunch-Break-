@@ -36,10 +36,10 @@
                 Contact Us
             </div>
             <h2 class="text-center">Input Your Message below</h2>
-            <form>
+             <form id="contactForm" action="send_email.php" method="POST">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                         placeholder="Email address">
                 </div>
                 <div class="mb-3">
@@ -54,7 +54,7 @@
                     <label for="tb" class="form-label">Insert Your Query</label>
                     <textarea name="tb" class="form-control" id="tb" cols="30" rows="10" placeholder="Insert Your Query"></textarea>
                 </div>
-                <button type="submit" class="btn btn-warning">Submit</button>
+                <button type="submit" class="btn btn-warning" id="contactEmail">Submit</button>
             </form>
 
         </main>
@@ -66,7 +66,7 @@
 
     </div>
 
-
+    
     <script src="boilerplate/footer.js"></script>
 
 </body>
