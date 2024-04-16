@@ -2,7 +2,7 @@ var cursorToggleBtn = document.getElementById("toggleCursor");
 var body = document.body;
 
 cursorToggleBtn.addEventListener('click', function () {
-  alert("here");
+  
 
   var isCursorOn = localStorage.getItem('cursor') === 'true';
 

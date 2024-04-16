@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Photoshop Effects",
+        "price":"images/products/photoshop.png"
+    },
+    {
+        "id":2,
+        "name":"Noise removal",
+        "price":"images/products/photoshop.png"
+    },
+    {
+        "id":3,
+        "name":"Sharpening",
+        "price":"images/products/photoshop.png"
+    },
+    {
+        "id":4,
+        "name":"Image restoration",
+        "price":"images/products/photoshop.png"
+    },
+    {
+        "id":5,
+        "name":"colorisation",
+        "price":"images/products/photoshop.png"
+    },
+    {
+        "id":6,
+        "name":"Photoshop",
+        "price":"images/products/photoshop.png"
+    }
+]
