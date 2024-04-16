@@ -46,7 +46,8 @@
                 <h5 class="card-title">Colourisation</h5>
                 <p class="card-text">Colourisation of black & white photos. Customer may provide details on what aspects
                   of each photos are what colours to</p>
-                <a href="#" class="btn btn-light btn-outline-warning text-secondary">Add Service</a>
+                  <p class="card-price">€60</p>
+                <button class="btn btn-light btn-outline-warning text-secondary" onclick="addColour()">Add Service</button>
               </div>
             </div>
           </div>
@@ -57,7 +58,8 @@
                 <h5 class="card-title">Scratch removal</h5>
                 <p class="card-text">We offer scratch removal as a service there may be limits on what we can recover
                   but custoemrs may choose what level of scratches they want removed.</p>
-                <a href="#" class="btn btn-light btn-outline-warning text-secondary">Add Service</a>
+                  <p class="card-price">from €10</p>
+                <a class="btn btn-light btn-outline-warning text-secondary" onclick="addScratch()">Add Service</a>
               </div>
             </div>
           </div>
@@ -65,21 +67,23 @@
             <div class="card bg-light shadow" style="width: 18rem;">
               <img src="images/photoEhance.jpg" class="card-img-top pb-5 p-3" alt="...">
               <div class="card-body bg-body-secondary mt-4 custom-shadow">
-                <h5 class="card-title">Sharpening/ Noise Removal </h5>
+                <h5 class="card-title">Basic Restoration  </h5>
                 <p class="card-text">We can sharpen and make images clearer, some images may not have enough detail left
                   to fully recover, in these cases we may paint in some details to compensate if option is selected</p>
-                <a href="#" class="btn btn-light btn-outline-warning text-secondary">Add Service</a>
+                  <p class="card-price">€10</p>
+                <a class="btn btn-light btn-outline-warning text-secondary" onclick="addSharpening()">Add Service</a>
               </div>
             </div>
             <div class="col-sm mt-5">
               <div class="card bg-light shadow" style="width: 18rem;">
                 <img src="images/WhatsApp Image 2024-02-16 at 14.52.45.jpeg" class="card-img-top pb-5 p-3" alt="...">
                 <div class="card-body bg-body-secondary mt-4 custom-shadow">
-                  <h5 class="card-title">Sharpening/ Noise Removal </h5>
+                  <h5 class="card-title">Extensive Restoration </h5>
                   <p class="card-text">We can sharpen and make images clearer, some images may not have enough detail
                     left to fully recover, in these cases we may paint in some details to compensate if option is
                     selected</p>
-                  <a href="#" class="btn btn-light btn-outline-warning text-secondary">Add Service</a>
+                    <p class="card-price">€50</p>
+                  <a class="btn btn-light btn-outline-warning text-secondary"  onclick="addNoiseRemoval()">Add Service</a>
                 </div>
               </div>
             </div>
@@ -93,7 +97,22 @@
     </main>
 
   </div>
+<script>
+  function addColour(){
+    var colorise = "Colourisation, 60, asset/placeholder.png";
+    localStorage.setItem("Colourisation", colorise);
+    location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
+  }
+  function addNoiseRemoval(){
 
+  }
+  function addScratch() {
+    
+  }
+  function addSharpening() {
+    
+  }
+</script>add
   <script src="boilerplate/footer.js"></script>
 </body>
 
