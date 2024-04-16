@@ -47,15 +47,15 @@
                             <img src="assets/placeholder.png" width="300" alt="" srcset="">
                         </div>
                         <div class="description">
-                            <span>restoration</span>
-                            <span>Sharpening</span>
-                            <span>retouching</span>
+                            <span >service chosen: </span>
+                            <span id="serviceType"></span>
+                            <span id="itemTotal"></span>
                         </div>
                         <div class="quantity">
                             <button class="btn btn-warning btn-outline-info  plusBtn" type="button" name="button">
                                 <img src="assets/icons/plus.png" width="32" />
                             </button>
-                            <input type="text" name="itemquantity" value="1">
+                            <input type="text" name="itemquantity" id="quantity" value="1">
                             <button class="btn btn-light minusBtn" type="button" name="button">
                                 <img src="assets/icons/minus.png" alt="" width="32"/>
                             </button>
@@ -64,7 +64,7 @@
                                 <input type="submit">
                               </form>
                         </div>
-                        <div class="total" id="itemTotal">€60
+                        <div class="total" id="subTotal">€0
                         </div>
 
                     </div>
@@ -76,6 +76,19 @@
 
     </div>
     <script type="application/javascript">
+        if (localStorage.getItem("Colourisation") === null) {
+            alert("Nothing in cart, back to home page");
+            location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/index.html";
+        }else{
+            list = localStorage.getItem("Colourisation");
+            var array = list.split(",");
+            document.getElementById("serviceType").innerHTML = array[0];
+            quant = document.getElementById("quantity").value;
+            subtotal = Number(quant)*Number(array[1]);
+             document.getElementById("subTotal").innerHTML = "€" + subtotal;
+             
+
+        }
 
         $('.minusBtn').on('click', function(e) {
     e.preventDefault();
@@ -91,7 +104,7 @@
     }
  
   $input.val(quantity);
- 
+  
 });
  
 $('.plusBtn').on('click', function(e) {
@@ -108,6 +121,7 @@ $('.plusBtn').on('click', function(e) {
  
     $input.val(quantity);
 });
+
     </script>
 
 

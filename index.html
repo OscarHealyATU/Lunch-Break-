@@ -47,7 +47,7 @@
                 <p class="card-text">Colourisation of black & white photos. Customer may provide details on what aspects
                   of each photos are what colours to</p>
                   <p class="card-price">€60</p>
-                <a class="btn btn-light btn-outline-warning text-secondary" onclick="addColour()">Add Service</a>
+                <button class="btn btn-light btn-outline-warning text-secondary" onclick="addColour()">Add Service</button>
               </div>
             </div>
           </div>
@@ -99,7 +99,9 @@
   </div>
 <script>
   function addColour(){
-
+    var colorise = "Colourisation, 60, asset/placeholder.png";
+    localStorage.setItem("Colourisation", colorise);
+    location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
   }
   function addNoiseRemoval(){
 

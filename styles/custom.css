@@ -43,6 +43,11 @@ canvas{
   height: 20px;
   margin-left: -27px;
 }
+.description{
+  width: 400px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
 
 header {
   background-color: var(--col_film);
