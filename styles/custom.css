@@ -28,7 +28,7 @@ main{
 canvas{
   position: absolute;
   z-index: 999;
-  pointer-events: all;
+  pointer-events: none;
 }
 
 .sprocket {
