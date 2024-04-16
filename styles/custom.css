@@ -104,6 +104,10 @@ li:active{
   display: block;
   margin: auto;
 }
+.profiles{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
 
 @keyframes spin {
   0% {
