@@ -44,7 +44,7 @@
                         <!-- use javascript variables -->
                         <div class="image">
                             <!-- <img src="images/customer/item-1.png" alt="" srcset=""> -->
-                            <img src="assets/placeholder.png" width="300" alt="" srcset="">
+                            <img src="assets/placeholder.png" width="300" alt="" id="thumb" srcset="">
                         </div>
                         <div class="description">
                             <span >service chosen: </span>
@@ -59,9 +59,9 @@
                             <button class="btn btn-light minusBtn" type="button" name="button" id="btnMinus">
                                 <img src="assets/icons/minus.png" alt="" width="32"/>
                             </button>
-                            <form action="/action_page.php">
-                                <input type="file" id="myFile" name="filename" multiple>
-                                <input type="submit">
+                            <form action="/checkout.html">
+                                <input type="file" id="myFile" name="filename" multiple  onclick="changeImg()"  >
+                                <input type="submit" onclick="thanks()">
                               </form>
                         </div>
                         <div class="total" id="subTotal">€0
@@ -76,6 +76,10 @@
 
     </div>
     <script type="application/javascript">
+        function thanks() {
+            location.href = "";
+        }
+        
         if (localStorage.getItem("Service") === null) {
             alert("Nothing in cart, back to home page");
             location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/index.html";
@@ -86,8 +90,6 @@
             quant = document.getElementById("quantity").value;
             subtotal = Number(quant)*Number(array[1]);
              document.getElementById("subTotal").innerHTML = "€" + subtotal;
-                
-        
         }
 
         $('.minusBtn').on('click', function(e) {
