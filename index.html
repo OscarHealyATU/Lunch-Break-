@@ -35,7 +35,7 @@
   <canvas id="myCanvas"></canvas>
   <div class="container ">
     <main class="bg-white shadow">
-      <img src="IMAGES/photoEhance.jpg" class="img-fluid w-75" id="logoBanner" alt="" srcset="">
+      <img src="IMAGES/photoEhance.jpg" height="400px" class="img-fluid w-75" id="logoBanner" alt="" srcset="">
       <div class="card-deck" id="cardDeck">
         <div class="gridContainer row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 p-3">
           <!-- ////////////////////////////////////////////////////////// -->
@@ -45,7 +45,7 @@
               <div class="card-body bg-body-secondary mt-4 custom-shadow">
                 <h5 class="card-title">Colourisation</h5>
                 <p class="card-text">Colourisation of black & white photos. Customer may provide details on what aspects
-                  of each photos are what colours to</p>
+                  of each photos are what colours to</p>  
                   <p class="card-price">€60</p>
                 <button class="btn btn-light btn-outline-warning text-secondary" onclick="addColour()">Add Service</button>
               </div>
@@ -101,24 +101,24 @@
   </div>
 <script>
   function addColour(){
-    var colorise = "Colourisation, 60, asset/placeholder.png";
-    localStorage.setItem("Colourisation", colorise);
-    location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
+    var colorise = "Colourisation,60,images/colorisation_thumb.jpg";
+    localStorage.setItem("filter", colorise);    
+    location.href = "cart.html";
   }
   function addNoiseRemoval(){
-    var colorise = "Scratch Removal, 10, asset/placeholder.png";
-    localStorage.setItem("Colourisation", colorise);
-    location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
+    var noiseRemoval = "Scratch Removal, 10,images/WhatsApp Image 2024-02-16 at 14.52.45.jpeg";
+    localStorage.setItem("filter", noiseRemoval);
+    location.href = "cart.html";
   }
   function addScratch() {
-    var colorise = "Basic Restoration, 10, asset/placeholder.png";
-    localStorage.setItem("Colourisation", colorise);
-    location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
+    var deScratch = "Basic Restoration, 10,images/denoise_restoration_thumb.jpg";
+    localStorage.setItem("filter", deScratch);  	
+    location.href = "cart.html";
   }
   function addSharpening() {
-    var colorise = "Extensive Restoration, 50, asset/placeholder.png";
-    localStorage.setItem("Colourisation", colorise);
-    location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/cart.html";
+    var sharpen = "Extensive Restoration, 50,images/photoEhance.jpg";
+    localStorage.setItem("filter", sharpen);
+    location.href = "cart.html";
   }
 </script>
   <script src="boilerplate/footer.js"></script>

@@ -35,34 +35,76 @@
         <main class="bg-white shadow">
             <div class="container shoppingCart">
 
-                <div class="title"><h2 class="text-center pt-5 pb-5 bg-light m-0">Shopping Cart</h2></div>
+                <div class="title">
+                    <h2 class="text-center pt-5 pb-5 bg-light m-0">Shopping Cart</h2>
+                </div>
                 <!-- reference tutorial for cart: https://designmodo.com/shopping-cart-ui/ -->
                 <div class="item">
+                    <!-- /////////////////////////// -->
+                    <table class="table table-hover table-striped table-success">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Service</th>
+                                <th scope="col">Upload Photos</th>
+                                <th scope="col">description</th>
+                                <th scope="col"></th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <div class="image">
+                                        <img src="assets/placeholder.png" height="100" alt="" id="thumb" srcset="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <form method="post" enctype="multipart/form-data">
+                                        <label for="file">Upload</label>
+                                        <input class="btn btn-outline-warning text-bg-light" type="file" id="file"
+                                            name="file" accept="image/*">
+                                        <br>
+                                        <br>
+                                        <button class="btn btn-warning btn-outline-success">Upload</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <span id="serviceType"></span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-warning btn-outline-info  plusBtn" type="button"
+                                        name="button" id="btnPlus" onclick="clicks++">
+                                        <img src="assets/icons/plus.png" width="32" />
+                                    </button>
+                                </td>
+                                <td>
+                                    <span id="itemTotal"></span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-light minusBtn" type="button" name="button" id="btnMinus"
+                                        onclick="clicks--">
+                                        <img src="assets/icons/minus.png" alt="" width="32" />
+                                </td>
+                                </button>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- /////////////// -->
                     <div class="buttons">
-                        <span class="deleteBtn"></span>
-                        <span class="favBtn"></span>
+
                         <!-- use javascript variables -->
-                        <div class="image">
-                            <!-- <img src="images/customer/item-1.png" alt="" srcset=""> -->
-                            <img src="assets/placeholder.png" width="300" alt="" id="thumb" srcset="">
-                        </div>
-                        <div class="description">
-                            <span >service chosen: </span>
-                            <span id="serviceType"></span>
-                            <span id="itemTotal"></span>
-                        </div>
+
+
                         <div class="quantity">
-                            <button class="btn btn-warning btn-outline-info  plusBtn" type="button" name="button" id="btnPlus">
-                                <img src="assets/icons/plus.png" width="32" />
-                            </button>
+
                             <input type="text" name="itemquantity" id="quantity" value="1">
-                            <button class="btn btn-light minusBtn" type="button" name="button" id="btnMinus">
-                                <img src="assets/icons/minus.png" alt="" width="32"/>
-                            </button>
-                            <form action="/checkout.html">
-                                <input type="file" id="myFile" name="filename" multiple  onclick="changeImg()"  >
-                                <input type="submit" onclick="thanks()">
-                              </form>
+
+
+                            <input type="button" onclick="thanks()" value="home">
                         </div>
                         <div class="total" id="subTotal">€0
                         </div>
@@ -76,54 +118,42 @@
 
     </div>
     <script type="application/javascript">
+        var clicks = 1;
+        // get sessions info to dynamically update card
+        filter = localStorage.getItem("filter").split(",");
+        document.getElementById("serviceType").innerText = filter[0];
+        document.getElementById("thumb").src = filter[2];
+        document.getElementById("itemTotal").innerText = "€" + filter[1];
+
+        // plus and minus button listeners
+        document.getElementById("btnPlus").addEventListener("click", add);
+        document.getElementById("btnMinus").addEventListener("click", bin);
+        // plus and minus button functionality
+        function add() {
+            document.getElementById("itemTotal").innerText = "€" + Number(filter[1]) * clicks;
+            var price = document.getElementById("itemTotal").innerText;
+        }
+        function bin() {
+            // check if cart item at 0 before subtracting
+            if (clicks >= 0) {
+                document.getElementById("itemTotal").innerText = "€" + Number(filter[1]) * clicks;
+                var price = document.getElementById("itemTotal").innerText;
+            } else {
+                clicks = 0;
+            }
+
+        }
         function thanks() {
-            location.href = "";
-        }
-        
-        if (localStorage.getItem("Service") === null) {
-            alert("Nothing in cart, back to home page");
-            location.href = "https://gray-ground-0d7964d03.4.azurestaticapps.net/index.html";
-        }else{
-            list = localStorage.getItem("Service");
-            var array = list.split(",");
-            document.getElementById("serviceType").innerHTML = array[0];
-            quant = document.getElementById("quantity").value;
-            subtotal = Number(quant)*Number(array[1]);
-             document.getElementById("subTotal").innerHTML = "€" + subtotal;
+            location.href = "index.html";
         }
 
-        $('.minusBtn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var quantity = parseInt($input.val());
-    
- 
-    if (quantity >= 1) {
-        quantity = quantity - 1;
-    } else {
-        quantity = 0;
-    }
- 
-  $input.val(quantity);
-  
-});
- 
-$('.plusBtn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var quantity = parseInt($input.val());
- 
-    if (quantity <= 100) {
-        quantity = quantity + 1;
-    } else {
-        quantity =100;
-    }
- 
-    $input.val(quantity);
-});
+        function fillCard() {
 
+
+        }
+        function changeImg() {
+
+        }
     </script>
 
 
