@@ -36,38 +36,35 @@
                 Contact Us
             </div>
             <h2 class="text-center">Input Your Message below</h2>
-             <form id="contactForm" action="send_email.php" method="POST">
-                <div class="mb-3">
+             <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+               
+                <div class="mb-3" >
+                    <input type="hidden" name="access_key" value="e07c0916-e028-42f0-ad59-8500a48ebdba">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    <input type="email" class="form-control"  name="email" id="email" aria-describedby="emailHelp"
                         placeholder="Email address">
                 </div>
                 <div class="mb-3">
-                    <label for="fn" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="fn" placeholder="First Name">
-                </div>
-                <div class="mb-3">
-                    <label for="ln" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="ln" placeholder="Last Name">
+                    <label for="fn" class="form-label">Enter Your Full Name</label>
+                    <input type="text" class="form-control" name="fname" id="fn" placeholder=" Enter Your Full Name">
                 </div>
                 <div class="mb-3">
                     <label for="tb" class="form-label">Insert Your Query</label>
-                    <textarea name="tb" class="form-control" id="tb" cols="30" rows="10" placeholder="Insert Your Query"></textarea>
+                    <textarea  class="form-control" name="message"  cols="30" rows="10" placeholder="Insert Your Query"></textarea>
                 </div>
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <button type="submit" class="btn btn-warning" id="contactEmail">Submit</button>
             </form>
-
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         </main>
-        <side class="bg-dark">
-            <p class="text-center h5">Call: 123 456 7890</p>
-            <p class="text-center h5">Email: <a href="mailto:imageretold@gmail.com"> imageRetold@gmail.com</a></p>
-        </side>
-
+       
 
     </div>
 
     
     <script src="boilerplate/footer.js"></script>
+    <script src="scripts/backtotop.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
 
