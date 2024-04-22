@@ -21,10 +21,10 @@ if (isset($_POST['submit'])) {
     if (in_array($fileRealExt, $allowed)) {
         if ($fileError === 0) {
             
-                $fileNameNew = uniqid(' ',true).".".$fileRealExt;
+                $fileNameNew = uniqid('_',true).".".$fileRealExt;
                 $fileDest = 'uploads/'.$fileNameNew;
                 move_uploaded_file($fileTmpName,$fileDest);
-                header("/upload.php?Success");
+                header("upload.php?Success");
         }else {
             echo "there was an error uploading file"
         }
