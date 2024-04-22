@@ -62,13 +62,13 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <form method="post" enctype="multipart/form-data">
+                                    <form action="upload.php" method="POST" enctype="multipart/form-data">
                                         <label for="file">Upload</label>
                                         <input class="btn btn-outline-warning text-bg-light" type="file" id="file"
                                             name="file" accept="image/*">
                                         <br>
                                         <br>
-                                        <button class="btn btn-warning btn-outline-success">Upload</button>
+                                        <button class="btn btn-warning btn-outline-success" id="submit" name="submit" type="submit">Upload</button>
                                     </form>
                                 </td>
                                 <td>
@@ -84,7 +84,7 @@
                                     <span id="itemTotal"></span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-light minusBtn" type="button" name="button" id="btnMinus"
+                                    <button class="btn btn-light minusBtn" type="submit" name="submit" id="btnMinus"
                                         onclick="clicks--">
                                         <img src="assets/icons/minus.png" alt="" width="32" />
                                 </td>
@@ -101,13 +101,12 @@
 
                         <div class="quantity">
 
-                            <input type="text" name="itemquantity" id="quantity" value="1">
+                            
 
 
-                            <input type="button" onclick="thanks()" value="home">
+                            <input class="btn btn-danger" type="button" onclick="thanks()" value="home">
                         </div>
-                        <div class="total" id="subTotal">€0
-                        </div>
+                      
 
                     </div>
                 </div>
