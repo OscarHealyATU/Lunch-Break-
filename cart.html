@@ -46,16 +46,17 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Service</th>
-                                <th scope="col">Upload Photos</th>
+                                <th scope="col text-end">Upload Photos</th>
+                                <th scope="col"></th>
                                 <th scope="col">description</th>
                                 <th scope="col"></th>
                                 <th scope="col">Price</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="generate">
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row" id="cartItemNo"></th>
                                 <td>
                                     <div class="image">
                                         <img src="assets/placeholder.png" height="100" alt="" id="thumb" srcset="">
@@ -68,9 +69,10 @@
                                             name="file" accept="image/*">
                                         <br>
                                         <br>
-                                        <button class="btn btn-warning btn-outline-success" id="submit" name="submit" type="submit">Upload</button>
+                                        
                                     </form>
-                                </td>
+                                </td><td><button class="btn btn-warning btn-outline-success" id="submit" name="submit"
+                                    type="submit">Upload</button></td>
                                 <td>
                                     <span id="serviceType"></span>
                                 </td>
@@ -90,33 +92,41 @@
                                 </td>
                                 </button>
                             </tr>
+                            
+                            <tr id="2"></tr>
+                            <tr id="3"></tr>
+                            <tr id="4"></tr>
+                            <tr id="5"></tr>
+                            <tr id="6"></tr>
+                            <tr id="7"></tr>
+                            <tr id="8"></tr>
+                            <tr id="9"></tr>
+                            <tr id="10"></tr>
+                            <tr id="11"></tr>
+                            <tr id="12"></tr>
+                            <tr id="13"></tr>
+                            <tr id="14"></tr>
+                            <tr id="15"></tr>
 
                         </tbody>
                     </table>
-                    <!-- /////////////// -->
-                    <div class="buttons">
-
-                        <!-- use javascript variables -->
-
-
-                        <div class="quantity">
-
-                            
-
-
-                            <input class="btn btn-danger" type="button" onclick="thanks()" value="home">
-                        </div>
-                      
-
+                    <div class="quantity">
+                        <input class="btn btn-danger" type="button" onclick="thanks()" value="home">
                     </div>
+
+
                 </div>
             </div>
+
         </main>
         <side class="bg-dark"></side>
 
 
     </div>
     <script type="application/javascript">
+
+        
+
         var clicks = 1;
         // get sessions info to dynamically update card
         filter = localStorage.getItem("filter").split(",");
@@ -145,13 +155,42 @@
         function thanks() {
             location.href = "index.html";
         }
-
-        function fillCard() {
-
-
-        }
-        function changeImg() {
-
+        for (let i = 0; i < array.length; i++) {
+          document.getElementById(i)(`<th scope="row" id="cartItemNo"></th>
+                                <td>
+                                    <div class="image">
+                                        <img src="assets/placeholder.png" height="100" alt="" id="thumb" srcset="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <form action="upload.php" method="POST" enctype="multipart/form-data">
+                                        <label for="file">Upload</label>
+                                        <input class="btn btn-outline-warning text-bg-light" type="file" id="file"
+                                            name="file" accept="image/*">
+                                        <br>
+                                        <br>
+                                        
+                                    </form>
+                                </td><td><button class="btn btn-warning btn-outline-success" id="submit" name="submit"
+                                    type="submit">Upload</button></td>
+                                <td>
+                                    <span id="serviceType"></span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-warning btn-outline-info  plusBtn" type="button"
+                                        name="button" id="btnPlus" onclick="clicks++">
+                                        <img src="assets/icons/plus.png" width="32" />
+                                    </button>
+                                </td>
+                                <td>
+                                    <span id="itemTotal"></span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-light minusBtn" type="submit" name="submit" id="btnMinus"
+                                        onclick="clicks--">
+                                        <img src="assets/icons/minus.png" alt="" width="32" />
+                                </td>
+                                </button>`);
         }
     </script>
 
