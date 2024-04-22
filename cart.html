@@ -155,11 +155,12 @@
         function thanks() {
             location.href = "index.html";
         }
-        for (let i = 0; i < array.length; i++) {
-          document.getElementById(i)(`<th scope="row" id="cartItemNo"></th>
+        var i = 0;
+        while(localStorage.getItem(i)){
+          document.getElementById(i).innerHTML(`<th scope="row" id="cartItemNo">${i}</th>
                                 <td>
                                     <div class="image">
-                                        <img src="assets/placeholder.png" height="100" alt="" id="thumb" srcset="">
+                                        <img src="` + filter[2] + `" height="100" alt="" id="thumb" srcset="">
                                     </div>
                                 </td>
                                 <td>
@@ -186,12 +187,14 @@
                                     <span id="itemTotal"></span>
                                 </td>
                                 <td>
+
                                     <button class="btn btn-light minusBtn" type="submit" name="submit" id="btnMinus"
                                         onclick="clicks--">
                                         <img src="assets/icons/minus.png" alt="" width="32" />
                                 </td>
                                 </button>`);
         }
+    
     </script>
 
 
