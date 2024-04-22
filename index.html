@@ -45,9 +45,10 @@
               <div class="card-body bg-body-secondary mt-4 custom-shadow">
                 <h5 class="card-title">Colourisation</h5>
                 <p class="card-text">Colourisation of black & white photos. Customer may provide details on what aspects
-                  of each photos are what colours to</p>  
-                  <p class="card-price">€60</p>
-                <button class="btn btn-light btn-outline-warning text-secondary" onclick="addColour()">Add Service</button>
+                  of each photos are what colours to</p>
+                <p class="card-price">€60</p>
+                <button class="btn btn-light btn-outline-warning text-secondary" onclick="addColour()">Add
+                  Service</button>
               </div>
             </div>
           </div>
@@ -58,7 +59,7 @@
                 <h5 class="card-title">Scratch removal</h5>
                 <p class="card-text">We offer scratch removal as a service there may be limits on what we can recover
                   but custoemrs may choose what level of scratches they want removed.</p>
-                  <p class="card-price">from €10</p>
+                <p class="card-price">from €10</p>
                 <a class="btn btn-light btn-outline-warning text-secondary" onclick="addScratch()">Add Service</a>
               </div>
             </div>
@@ -67,10 +68,10 @@
             <div class="card bg-light shadow" style="width: 18rem;">
               <img src="images/photoEhance.jpg" class="card-img-top pb-5 p-3" alt="...">
               <div class="card-body bg-body-secondary mt-4 custom-shadow">
-                <h5 class="card-title">Basic Restoration  </h5>
+                <h5 class="card-title">Basic Restoration </h5>
                 <p class="card-text">We can sharpen and make images clearer, some images may not have enough detail left
                   to fully recover, in these cases we may paint in some details to compensate if option is selected</p>
-                  <p class="card-price">€10</p>
+                <p class="card-price">€10</p>
                 <a class="btn btn-light btn-outline-warning text-secondary" onclick="addSharpening()">Add Service</a>
               </div>
             </div>
@@ -82,13 +83,15 @@
                   <p class="card-text">We can sharpen and make images clearer, some images may not have enough detail
                     left to fully recover, in these cases we may paint in some details to compensate if option is
                     selected</p>
-                    <p class="card-price">€50</p>
-                  <a class="btn btn-light btn-outline-warning text-secondary"  onclick="addNoiseRemoval()">Add Service</a>
+                  <p class="card-price">€50</p>
+                  <a class="btn btn-light btn-outline-warning text-secondary" onclick="addNoiseRemoval()">Add
+                    Service</a>
                 </div>
               </div>
             </div>
 
-            <script type="text/javascript">(function(){d=document;s=d.createElement("script");s.src="https://widget.supportai.com/a044013f19022b4.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+            <script
+              type="text/javascript">(function () { d = document; s = d.createElement("script"); s.src = "https://widget.supportai.com/a044013f19022b4.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
             <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
             <!-- ////////////////////////////////////////////////////// -->
             <!-- <script src="scripts/cards.js"></script>  -->
@@ -99,28 +102,28 @@
     </main>
 
   </div>
-<script>
-  function addColour(){
-    var colorise = "Colourisation,60,images/colorisation_thumb.jpg";
-    localStorage.setItem("filter", colorise);    
-    location.href = "cart.html";
-  }
-  function addNoiseRemoval(){
-    var noiseRemoval = "Scratch Removal, 10,images/WhatsApp Image 2024-02-16 at 14.52.45.jpeg";
-    localStorage.setItem("filter", noiseRemoval);
-    location.href = "cart.html";
-  }
-  function addScratch() {
-    var deScratch = "Basic Restoration, 10,images/denoise_restoration_thumb.jpg";
-    localStorage.setItem("filter", deScratch);  	
-    location.href = "cart.html";
-  }
-  function addSharpening() {
-    var sharpen = "Extensive Restoration, 50,images/photoEhance.jpg";
-    localStorage.setItem("filter", sharpen);
-    location.href = "cart.html";
-  }
-</script>
+  <script>
+    function addColour() {
+      var colorise = "Colourisation,60,images/colorisation_thumb.jpg";
+      localStorage.setItem("filter", colorise);
+      location.href = "cart.html";
+    }
+    function addNoiseRemoval() {
+      var noiseRemoval = "Scratch Removal, 10,images/WhatsApp Image 2024-02-16 at 14.52.45.jpeg";
+      localStorage.setItem("filter", noiseRemoval);
+      location.href = "cart.html";
+    }
+    function addScratch() {
+      var deScratch = "Basic Restoration, 10,images/denoise_restoration_thumb.jpg";
+      localStorage.setItem("filter", deScratch);
+      location.href = "cart.html";
+    }
+    function addSharpening() {
+      var sharpen = "Extensive Restoration, 50,images/photoEhance.jpg";
+      localStorage.setItem("filter", sharpen);
+      location.href = "cart.html";
+    }
+  </script>
   <script src="boilerplate/footer.js"></script>
   <script src="scripts/backtotop.js"></script>
 </body>
